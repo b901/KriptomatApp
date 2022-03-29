@@ -454,7 +454,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
-    marginLeft: -220,
+    marginLeft: -200,
   },
   coinIcon: {
     width: 20,
