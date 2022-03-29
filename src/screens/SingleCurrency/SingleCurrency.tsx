@@ -71,7 +71,7 @@ const SingleCurrency = ({
   const chartData = {
     datasets: [
       {
-        data: prices || [0, 0, 0],
+        data: (prices.length > 0 && prices) || [0, 0, 0, 0, 0],
         color: () => 'rgba(14, 127, 213, 1)',
         strokeWidth: 2,
       },
@@ -170,7 +170,7 @@ const SingleCurrency = ({
           <View style={priceAndPercentSection}>
             <View style={priceSection}>
               <Text style={mainPriceText}>
-                $ {Number(data?.current_price).toLocaleString()}
+                € {Number(data?.current_price).toLocaleString()}
               </Text>
             </View>
             <View style={percentSection}>
@@ -180,12 +180,12 @@ const SingleCurrency = ({
           <View style={lowAndHighSection}>
             <Text style={hourText}>24h Low </Text>
             <Text style={highLowPriceText}>
-              $ {Number(data?.low_24h).toLocaleString()}
+              € {Number(data?.low_24h).toLocaleString()}
             </Text>
             <View style={spacer} />
             <Text style={hourText}>24h High </Text>
             <Text style={highLowPriceText}>
-              $ {Number(data?.high_24h).toLocaleString()}
+              € {Number(data?.high_24h).toLocaleString()}
             </Text>
           </View>
         </View>
@@ -232,13 +232,13 @@ const SingleCurrency = ({
           <View style={volumeSection}>
             <Text style={overviewSmallText}>Volume (1d):</Text>
             <Text style={overviewNumber}>
-              $ {Number(data?.total_volume).toLocaleString()}
+              € {Number(data?.total_volume).toLocaleString()}
             </Text>
           </View>
           <View style={marketCapSection}>
             <Text style={overviewSmallText}>Market cap:</Text>
             <Text style={overviewNumber}>
-              $ {Number(data?.market_cap).toLocaleString()}
+              € {Number(data?.market_cap).toLocaleString()}
             </Text>
           </View>
         </View>

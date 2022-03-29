@@ -66,7 +66,9 @@ const CoinCard = ({data, navigation}) => {
         </View>
         <View style={dataSection}>
           <View>
-            <Text style={priceText}>${data?.current_price}</Text>
+            <Text style={priceText}>
+              €{Number(data?.current_price).toLocaleString()}
+            </Text>
           </View>
           <View style={percentSection}>
             {renderCorrectPercentageColorAndIcon()}
